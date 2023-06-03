@@ -12,29 +12,13 @@ const Navbar = () => {
           </Link>
           <nav className="hidden sm:block transition-all">
             <ul className="flex items-center gap-x-8">
-              <li>
-                <Link href="#about" className="hover:text-yellow-400">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#projects" className="hover:text-yellow-400">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="hover:text-yellow-400">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://blog.johnmwendwa.me"
-                  className="hover:text-yellow-400"
-                >
-                  Blog
-                </Link>
-              </li>
+              {MenuItems.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.link} className="hover:text-yellow-400">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
           <div className="hidden sm:block">
@@ -52,5 +36,24 @@ const Navbar = () => {
     </header>
   );
 };
+
+const MenuItems = [
+  {
+    name: "About",
+    link: "#about",
+  },
+  {
+    name: "Projects",
+    link: "#projects",
+  },
+  {
+    name: "Contact",
+    link: "#contact",
+  },
+  {
+    name: "Blog",
+    link: "#blog",
+  },
+];
 
 export default Navbar;
