@@ -1,13 +1,16 @@
 import React, { ReactNode } from "react";
 import Navbar from "./Navbar";
+import SectionContainer from "components/SectionContainer";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div>
+    <div className="grid grid-rows-[auto_1fr_auto] h-screen relative">
       <Navbar />
       <main>{children}</main>
-      <footer>
-        &copy; John Mwendwa <span>{new Date().getFullYear()}</span>
+      <footer className="bg-gray-800 py-4 text-white text-center">
+        <SectionContainer>
+          &copy; John Mwendwa <span>{new Date().getFullYear()}</span>
+        </SectionContainer>
       </footer>
     </div>
   );
