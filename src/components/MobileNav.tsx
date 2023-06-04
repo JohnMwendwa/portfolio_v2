@@ -10,7 +10,7 @@ interface MobileNavProps {
 const MobileNav = ({ MenuItems }: MobileNavProps) => {
   return (
     <Menu as="div" className="relative sm:hidden">
-      <Menu.Button className="flex items-center px-3 py-2 divide-y border rounded border-sky-400 text-black dark:text-sky-200  dark:hover:text-white hover:border-sky-500 ">
+      <Menu.Button className="flex items-center px-3 py-2 border rounded border-sky-300 text-black dark:text-sky-200  dark:hover:text-white hover:border-sky-500 focus-visible:ring-2 ">
         <svg
           className="fill-current h-5 w-5"
           viewBox="0 0 20 20"
@@ -37,7 +37,9 @@ const MobileNav = ({ MenuItems }: MobileNavProps) => {
               {({ active }) => (
                 <Link
                   href={item.link}
-                  className="hover:text-yellow-400 flex w-full px-4 py-2 hover:bg-gray-600"
+                  className={`flex w-full px-4 py-2 first-of-type:rounded-t-md ${
+                    active && "text-yellow-400 bg-gray-600"
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -49,11 +51,14 @@ const MobileNav = ({ MenuItems }: MobileNavProps) => {
               <Link
                 href="https://github.com/JohnMwendwa"
                 target="_blank"
-                className="flex items-center px-4 py-2 hover:text-yellow-400 hover:bg-gray-600 border-t border-gray-400"
+                className={`flex items-center px-4 py-2 border-t border-gray-400 rounded-b-md ${
+                  active && "text-yellow-400 bg-gray-600"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="1em"
+                  aria-hidden="true"
                   viewBox="0 0 496 512"
                   className="fill-white h-5 w-5 mr-2"
                 >
