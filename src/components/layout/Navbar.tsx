@@ -13,8 +13,11 @@ const Navbar = () => {
     <header className="bg-gray-900 text-white">
       <SectionContainer>
         <div className="flex items-center justify-between space-x-8 py-6 px-4 backdrop-blur-sm backdrop-filter">
-          <Link href="/" className="font-bold text-lg">
-            JM
+          <Link
+            href="/"
+            className="font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-tr from-yellow-400 from-35% via-orange-600 via-5% to-yellow-300 leading-tight tracking-tighter"
+          >
+            Mwendwa
           </Link>
           <nav className="hidden sm:block transition-all">
             <ul className="flex items-center gap-x-8">
@@ -50,7 +53,7 @@ const Navbar = () => {
 
 const MenuItems: MenuProps[] = [
   {
-    name: "About",
+    name: "About Me",
     link: "#about",
   },
   {
