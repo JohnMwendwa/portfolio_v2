@@ -10,7 +10,7 @@ interface MobileNavProps {
 const MobileNav = ({ MenuItems }: MobileNavProps) => {
   return (
     <Menu as="div" className="relative sm:hidden">
-      <Menu.Button className="flex items-center px-3 py-2 border rounded border-sky-300 text-black dark:text-sky-200  dark:hover:text-white hover:border-sky-500 focus-visible:ring-2 ">
+      <Menu.Button className="flex items-center px-3 py-2 border rounded border-sky-300 text-white hover:text-sky-200 hover:border-sky-500 focus-visible:ring-2 ">
         <svg
           className="fill-current h-5 w-5"
           viewBox="0 0 20 20"
@@ -31,7 +31,7 @@ const MobileNav = ({ MenuItems }: MobileNavProps) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 flex flex-col  mt-2 w-56 bg-opacity-75 origin-top-right rounded-md bg-gray-50 dark:bg-gray-900/95 shadow-lg backdrop-filter backdrop-blur-sm border border-gray-300 dark:border-gray-500 focus:outline-none z-30 text-sm">
+        <Menu.Items className="absolute right-0 flex flex-col  mt-2 w-56 bg-opacity-75 origin-top-right rounded-md bg-gray-900/95 shadow-lg backdrop-filter backdrop-blur-sm border  border-gray-500 focus:outline-none z-30 text-sm">
           {MenuItems.map((item) => (
             <Menu.Item key={item.name}>
               {({ active }) => (
