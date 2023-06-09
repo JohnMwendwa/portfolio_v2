@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -10,10 +11,25 @@ export interface MenuProps {
 }
 
 const Navbar = () => {
+  const [scroling, setScrolling] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const position = window.scrollY;
+      if (position > 80) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    });
+  }, []);
   return (
-    <header className="bg-gray-900 text-white">
+    <header
+      className={`${
+        scroling ? "bg-slate-900/95" : "bg-gray-900"
+      } sticky top-0 z-30 w-full transition-colors duration-300 text-white backdrop-blur`}
+    >
       <SectionContainer>
-        <div className="flex items-center justify-between space-x-8 py-6 px-4 backdrop-blur-sm backdrop-filter">
+        <div className="flex items-center justify-between space-x-8 py-6 px-4">
           <Link
             href="/"
             aria-label="Go to Home page"
