@@ -4,7 +4,7 @@ import SectionContainer from "components/SectionContainer";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] h-screen relative">
+    <div className="grid grid-rows-[auto_1fr_auto] min-h-screen relative">
       <Navbar />
       <main>{children}</main>
       <footer className="bg-gray-800 py-4 text-white text-center">
