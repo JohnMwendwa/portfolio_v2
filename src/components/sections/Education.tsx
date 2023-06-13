@@ -43,11 +43,7 @@ const EducationDetails: EducationDetailsProps[] = [
 ];
 
 // Create svg for smooth srolling the timeline effect
-const Icon = ({ reference }) => {
-  const { scrollYProgress } = useScroll({
-    target: reference,
-    offset: ["center end", "center center"],
-  });
+const Icon = ({ scrollYProgress }) => {
   return (
     <figure className="absolute left-0 stroke-white" aria-hidden="true">
       <svg
@@ -83,9 +79,16 @@ const Icon = ({ reference }) => {
 
 const Details = ({ institution, period, certification }) => {
   const linkRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: linkRef,
+    offset: ["center end", "center center"],
+  });
   return (
-    <li ref={linkRef} className="my-8 ml-24 first:mt-0 last:mb-0 flex flex-col">
-      <Icon reference={linkRef} />
+    <motion.li
+      ref={linkRef}
+      className="my-8 ml-24 first:mt-0 last:mb-0 flex flex-col"
+    >
+      <Icon scrollYProgress={scrollYProgress} />
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -104,7 +107,7 @@ const Details = ({ institution, period, certification }) => {
           ))}
         </ul>
       </motion.div>
-    </li>
+    </motion.li>
   );
 };
 
@@ -112,7 +115,7 @@ const Education = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "start start"],
+    offset: ["start end", "center start"],
   });
   return (
     <div className="my-16 w-full">
@@ -128,7 +131,7 @@ const Education = () => {
         <ul className="w-full flex flex-col items-start justify-between ml-4">
           {EducationDetails.map((item, idx) => (
             <Details
-              key={idx}
+              key={`wes-${idx}`}
               institution={item.institution}
               period={item.period}
               certification={item.certification}
