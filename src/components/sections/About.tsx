@@ -1,3 +1,5 @@
+import React from "react";
+import Education from "./Education";
 import SectionContainer from "components/SectionContainer";
 
 interface SkillsProps {
@@ -13,8 +15,8 @@ const Skills: SkillsProps = {
     "styled-components",
     "Javascript",
     "React",
-    "TypeScript",
     "Next.js",
+    "TypeScript",
     "GIT",
     "Github",
     "NPM",
@@ -26,7 +28,7 @@ const About = () => {
   return (
     <SectionContainer>
       <div className="h-full px-8 py-16 text-white">
-        <h1 className="font-bold text-4xl mb-8 text-center uppercase tracking-tight">
+        <h1 className="font-bold text-yellow-400 text-5xl mb-16 text-center uppercase tracking-tight">
           About Me
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-32 text-lg">
@@ -56,11 +58,11 @@ const About = () => {
             </p>
           </div>
 
-          <div className="mt-8">
+          <div>
             <h3 className="font-bold text-2xl mb-3">My Skills</h3>
             <div>
-              <h3 className="text-blue-400 font-bold">Frontend</h3>
-              <div className="flex flex-wrap">
+              <h3 className="text-yellow-400 font-bold">Frontend</h3>
+              <div className="flex flex-wrap font-mono">
                 {Skills.fronted.map((skill) => (
                   <span
                     key={skill}
@@ -72,8 +74,8 @@ const About = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-blue-400 font-bold">Backend</h3>
-              <div className="flex flex-wrap">
+              <h3 className="text-yellow-400 font-bold">Backend</h3>
+              <div className="flex flex-wrap font-mono">
                 {Skills.backend.map((skill) => (
                   <span
                     key={skill}
@@ -86,6 +88,7 @@ const About = () => {
             </div>
           </div>
         </div>
+        <Education />
       </div>
     </SectionContainer>
   );
