@@ -1,6 +1,7 @@
 import React from "react";
 import Education from "./Education";
 import SectionContainer from "components/SectionContainer";
+import Hobbies from "./Hobbies";
 
 interface SkillsProps {
   fronted: string[];
@@ -89,6 +90,7 @@ const About = () => {
           </div>
         </div>
         <Education />
+        <Hobbies />
       </div>
     </SectionContainer>
   );
