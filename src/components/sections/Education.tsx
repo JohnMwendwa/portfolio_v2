@@ -96,7 +96,7 @@ const Details = ({ institution, period, certification }) => {
       >
         <h3 className="capitalize font-bold text-2xl">{institution}</h3>
         <span className="capitalize font-medium text-gray-300">{period}</span>
-        <ul className="font-medium w-full">
+        <ul className="font-medium w-full text-lg">
           {certification.map((certificate, idx) => (
             <motion.li
               className="before:content-['\2022'] before:text-yellow-400 before:text-2xl before:font-bold before:inline-block before:w-4 before:-ml-4"

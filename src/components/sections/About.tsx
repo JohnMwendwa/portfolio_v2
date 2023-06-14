@@ -33,9 +33,9 @@ const About = () => {
           About Me
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-32 text-lg">
-          <div>
-            <h2 className="font-bold text-2xl mb-3">
-              Hi, I&apos;m John Mwendwa{" "}
+          <div className="text-lg sm:text-xl mb-8">
+            <h2 className="font-bold text-3xl mb-3">
+              Hi, I&apos;m John Mwendwa
             </h2>
             <p className="mb-3">
               I&apos;m a freelance{" "}
