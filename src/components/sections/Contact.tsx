@@ -93,7 +93,7 @@ const Contact = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full px-8">
       <ToastContainer />
-      <h1 className="font-bold text-white text-4xl sm:text-6xl mb-4 w-full text-center uppercase tracking-tight">
+      <h1 className="font-bold text-yellow-400 text-4xl sm:text-5xl mb-4 w-full text-center uppercase tracking-tight">
         Contact Me
       </h1>
 
@@ -113,7 +113,7 @@ const Contact = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="peer rounded-sm ring-2 focus:ring-sky-600 bg-transparent w-full h-10 px-4 focus:outline-none placeholder-transparent text-white"
+            className="peer rounded-sm ring-2 ring-yellow-600 focus:ring focus:ring-yellow-400 bg-transparent w-full h-10 px-4 focus:outline-none placeholder-transparent text-white"
           />
           <label
             htmlFor="name"
@@ -130,7 +130,7 @@ const Contact = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="peer rounded-sm ring-2 focus:ring-sky-600 bg-transparent w-full h-10 px-4 focus:outline-none placeholder-transparent text-white"
+            className="peer rounded-sm ring-2  ring-yellow-600 focus:ring focus:ring-yellow-400 bg-transparent w-full h-10 px-4 focus:outline-none placeholder-transparent text-white"
           />
           <label
             htmlFor="email"
@@ -147,7 +147,7 @@ const Contact = () => {
             onChange={(e) => setMessage(e.target.value)}
             required
             rows={5}
-            className="peer rounded-sm ring-2 focus:ring-sky-600 bg-transparent w-full px-4 py-2 focus:outline-none placeholder-transparent text-white"
+            className="peer rounded-sm ring-2 ring-yellow-600 focus:ring focus:ring-yellow-400 bg-transparent w-full px-4 py-2 focus:outline-none placeholder-transparent text-white"
           />
           <label
             htmlFor="textarea"
@@ -160,10 +160,8 @@ const Contact = () => {
           <button
             type="submit"
             className={`${
-              loading
-                ? "bg-gray-400"
-                : "bg-gray-900 hover:bg-gray-700 dark:bg-sky-800 dark:hover:bg-sky-700"
-            } text-white px-4 py-2 rounded-md hover:scale-105 focus:scale-105 ease-linear transition-all`}
+              loading ? "bg-gray-400" : "bg-orange-700 hover:bg-orange-600"
+            } text-white px-6 py-3 rounded-md hover:scale-105 focus:ring-yellow-400 focus:scale-105 focus:ring focus:ring-offset-2 ease-linear transition-all`}
             disabled={loading}
           >
             Send Feedback
