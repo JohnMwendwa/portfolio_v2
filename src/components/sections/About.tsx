@@ -34,7 +34,7 @@ const About = () => {
           About Me
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-24 text-lg">
-          <div className="text-lg text-justify sm:text-xl mb-8">
+          <div className="text-lg sm:text-justify sm:text-xl mb-8">
             <h2 className="font-bold text-3xl mb-3">
               Hi, I&apos;m John Mwendwa
             </h2>
