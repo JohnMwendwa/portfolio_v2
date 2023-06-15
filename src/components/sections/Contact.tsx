@@ -2,6 +2,9 @@ import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
+import WhatsappIcon from "assets/whatsapp";
+import MailIcon from "assets/mail";
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -98,10 +101,21 @@ const Contact = () => {
       </h1>
 
       <div className="flex justify-center space-x-4 text-white mb-6">
-        <Link href={"https://wa.me/+254716237927"} target="_blank">
+        <Link
+          href={"https://wa.me/+254716237927"}
+          target="_blank"
+          className="group hover:text-yellow-400 inline-flex flex-col items-center justify-center"
+        >
           Whatsapp
+          <WhatsappIcon className="group-hover:fill-yellow-400" />
         </Link>
-        <Link href={"mailto:hey@ohnmwendwa.me"}>Email</Link>
+        <Link
+          href={"mailto:hey@ohnmwendwa.me"}
+          className="group hover:text-yellow-400 inline-flex flex-col items-center justify-center"
+        >
+          Email
+          <MailIcon className="group-hover:fill-yellow-400" />
+        </Link>
       </div>
 
       <form className="w-full max-w-lg" onSubmit={handleSubmit}>
