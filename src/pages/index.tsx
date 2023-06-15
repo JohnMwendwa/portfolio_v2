@@ -2,6 +2,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import SectionContainer from "components/SectionContainer";
+import GithubIcon from "assets/github";
+import MailIcon from "assets/mail";
+import EditIcon from "assets/edit";
 
 const FramerLink = motion(Link);
 
@@ -25,33 +28,36 @@ export default function Home() {
         <div className="w-full  mx-auto flex flex-col justify-center items-center  sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-4 md:mt-8 px-6">
           <FramerLink
             href={"/contact"}
-            className="w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-center text-gray-200 backdrop-blur-sm backdrop-filter"
+            className="flex items-center justify-center group w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-gray-200 backdrop-blur-sm backdrop-filter"
             variants={AnimatedLink}
             initial="initial"
             animate="animate"
           >
+            <MailIcon className="group-hover:fill-yellow-400 mr-2" />
             Get in Touch
           </FramerLink>
           <FramerLink
             href="https://blog.johnmwendwa.me"
             aria-label="Visit my developer blog"
             target="_blank"
-            className="w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-center text-gray-200 backdrop-blur-sm backdrop-filter"
+            className="flex items-center justify-center group w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-gray-200 backdrop-blur-sm backdrop-filter"
             variants={AnimatedLink}
             initial="initial"
             animate="animate2"
           >
+            <EditIcon className="group-hover:fill-yellow-400 mr-2 w-5 h-5" />
             Blog
           </FramerLink>
           <FramerLink
             href="https://github.com/JohnMwendwa"
             aria-label="Visit my github profile"
             target="_blank"
-            className="w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-center text-gray-200 backdrop-blur-sm backdrop-filter"
+            className="flex items-center justify-center group w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-gray-200 backdrop-blur-sm backdrop-filter"
             variants={AnimatedLink}
             initial="initial"
             animate="animate3"
           >
+            <GithubIcon className="group-hover:fill-yellow-400 mr-2 w-5 h-5" />
             Github
           </FramerLink>
         </div>
