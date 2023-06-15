@@ -53,7 +53,7 @@ const Word: Variants = {
 
 const Hobbies = () => {
   return (
-    <div className="my-16 text-lg sm:text-xl max-w-5xl mx-auto">
+    <div className="my-16 text-lg sm:text-xl max-w-5xl mx-auto text-justify">
       <h2 className="font-bold text-yellow-400 text-5xl mb-16 text-center">
         Hobbies
       </h2>
