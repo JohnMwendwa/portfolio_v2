@@ -16,7 +16,7 @@ export default function Home() {
           <h2 className="font-bold text-2xl sm:text-3xl  text-yellow-400 saturate-200 mb-4">
             Full Stack Web Developer
           </h2>
-          <p className="max-w-sm sm:max-w-xl text-base sm:text-lg md:text-xl text-gray-100">
+          <p className="max-w-sm sm:max-w-xl text-base sm:text-lg md:text-xl text-gray-100 text-justify">
             I&apos;m an advocate for building responsive, accessible and
             inclusive digital products and experiences for the web based in
             Nairobi, Kenya
@@ -64,7 +64,7 @@ const AnimatedLink = {
   initial: {
     opacity: 0,
     y: 50,
-    x: -20,
+    x: -15,
   },
   animate: {
     opacity: 1,
@@ -72,7 +72,6 @@ const AnimatedLink = {
     x: 0,
     transition: {
       delay: 0.3,
-      // ease: "easeIn",
       type: "spring",
     },
   },
@@ -81,8 +80,7 @@ const AnimatedLink = {
     y: 0,
     x: 0,
     transition: {
-      delay: 0.7,
-      // ease: "easeIn",
+      delay: 0.8,
       type: "spring",
     },
   },
@@ -91,8 +89,7 @@ const AnimatedLink = {
     y: 0,
     x: 0,
     transition: {
-      delay: 1.2,
-      // ease: "easeIn",
+      delay: 1.3,
       type: "spring",
     },
   },
