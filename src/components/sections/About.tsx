@@ -1,4 +1,5 @@
-import React from "react";
+import { motion, Variants } from "framer-motion";
+
 import Education from "./Education";
 import SectionContainer from "components/SectionContainer";
 import Hobbies from "./Hobbies";
@@ -63,29 +64,41 @@ const About = () => {
             <h3 className="font-bold text-2xl mb-3">My Skills</h3>
             <div>
               <h3 className="text-yellow-400 font-bold">Frontend</h3>
-              <div className="flex flex-wrap font-mono">
+              <motion.div
+                className="flex flex-wrap font-mono"
+                initial="initial"
+                animate="animate1"
+                variants={Container}
+              >
                 {Skills.fronted.map((skill) => (
-                  <span
+                  <motion.span
                     key={skill}
                     className="px-3 py-1 bg-gray-700 m-2 rounded-sm"
+                    variants={Box}
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
+              </motion.div>
             </div>
             <div>
               <h3 className="text-yellow-400 font-bold">Backend</h3>
-              <div className="flex flex-wrap font-mono">
+              <motion.div
+                className="flex flex-wrap font-mono"
+                initial="initial"
+                animate="animate2"
+                variants={Container}
+              >
                 {Skills.backend.map((skill) => (
-                  <span
+                  <motion.span
                     key={skill}
                     className="px-3 py-1 bg-gray-700 m-2 rounded-sm"
+                    variants={Box}
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -94,6 +107,40 @@ const About = () => {
       </div>
     </SectionContainer>
   );
+};
+
+const Container: Variants = {
+  initial: {},
+  animate1: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+  animate2: {
+    transition: {
+      staggerChildren: 0.5,
+      delayChildren: 5.5,
+    },
+  },
+};
+
+const Box: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  animate1: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+  animate2: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
 };
 
 export default About;
