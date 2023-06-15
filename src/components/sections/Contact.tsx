@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import WhatsappIcon from "assets/whatsapp";
 import MailIcon from "assets/mail";
@@ -8,6 +9,7 @@ import MailIcon from "assets/mail";
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -40,6 +42,19 @@ const Contact = () => {
       });
       return;
     }
+    if (!subject.trim()) {
+      toast.error("Please enter email subject!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      return;
+    }
     if (!message.trim()) {
       toast.error("Please enter a valid message!", {
         position: "top-center",
@@ -57,7 +72,7 @@ const Contact = () => {
     setLoading(true);
     const response = await fetch("/api/contact", {
       method: "POST",
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ name, email, subject, message }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -91,10 +106,11 @@ const Contact = () => {
       setName("");
       setEmail("");
       setMessage("");
+      setSubject("");
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center h-full px-8">
+    <div className="relative flex flex-col items-center justify-center h-full px-8">
       <ToastContainer />
       <h1 className="font-bold text-yellow-400 text-4xl sm:text-5xl mb-4 w-full text-center uppercase tracking-tight">
         Contact Me
@@ -154,13 +170,30 @@ const Contact = () => {
           </label>
         </div>
         <div className="relative w-full mt-6">
+          <input
+            id="subject"
+            type="text"
+            placeholder="Enter subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            required
+            className="peer rounded-sm ring-2  ring-yellow-600 focus:ring focus:ring-yellow-400 bg-transparent w-full h-10 px-4 focus:outline-none placeholder-transparent text-white"
+          />
+          <label
+            htmlFor="subject"
+            className="absolute transition-all left-0 -top-3.5 ml-4 px-2 bg-gray-900 peer-placeholder-shown:top-2 peer-focus:-top-3.5 text-gray-300"
+          >
+            Enter subject
+          </label>
+        </div>
+        <div className="relative w-full mt-6">
           <textarea
             id="textarea"
             placeholder="Enter your message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            rows={5}
+            rows={3}
             className="peer rounded-sm ring-2 ring-yellow-600 focus:ring focus:ring-yellow-400 bg-transparent w-full px-4 py-2 focus:outline-none placeholder-transparent text-white"
           />
           <label
