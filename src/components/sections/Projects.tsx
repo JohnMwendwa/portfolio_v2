@@ -3,57 +3,86 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const FramerImage = motion(Image);
+interface ProectDetailsProps {
+  image: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  description: string;
+  technologies: string[];
+  demo: string;
+  source?: string;
+}
 
-const ProectDetails = [
+const ProectDetails: ProectDetailsProps[] = [
   {
     image: {
       src: "/projects/blog.png",
-      alt: "",
+      alt: "Image of my dev blog",
     },
     title: "Blog",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit repudiandae molestiae laboriosam accusamus soluta similique, possimus eveniet amet sunt? Voluptates voluptatibus cumque ex similique nisi accusantium nulla nihil accusamus sint.",
-    technologies: ["Next.js", "Tailwind", "NodeJS", "MongoDB"],
+      "A blog for all developers. You can create your account, and start publishing your articles right away. Articles update in real-time and therefore there is no frustration of continually deploying your site once you finish writing a new article.",
+    technologies: [
+      "Next.js",
+      "Tailwind",
+      "Next-auth",
+      "express",
+      "mongoose",
+      "nodemailer",
+      "NodeJS",
+      "MongoDB",
+      "react-markdown",
+    ],
     demo: "https://blog.johnmwendwa.me/",
   },
   {
     image: {
       src: "/projects/movies.webp",
-      alt: "",
+      alt: "Image of my movies website",
     },
     title: "Movies Website",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit repudiandae molestiae laboriosam accusamus soluta similique, .",
-    technologies: ["Next.js", "Tailwind", "NodeJS", "MongoDB"],
+      "If you've read my about page you definitely know that I'm a big fan of movies. I just had to create a site where I can download movies for free and without sooo many ads getting in my way. I hope this site benefits you as it does for me.",
+    technologies: ["React", "Tailwind", "Typescript", "Rest Api", "debounce"],
     demo: "https://movies.johnmwendwa.me/",
     source: "https://github.com/JohnMwendwa/react-movies-app",
   },
   {
     image: {
       src: "/projects/chatbot.webp",
-      alt: "",
+      alt: "Image of the chatbot website",
     },
     title: "Chatbot",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit repudiandae molestiae laboriosam accusamus soluta similique, possimus eveniet amet sunt? Voluptates voluptatibus cumque ex similique nisi accusantium nulla nihil accusamus sint.",
-    technologies: ["Next.js", "Tailwind", "NodeJS", "MongoDB"],
+      "If you don't like leaving evidence behind, this site has got you in mind. Go chat with your other person there. No personal details are required. You just choose any anonymous name you can think of and you can share the name with those you want to chat with, and ask them to join the chat room using that name. Your messages are not saved in any database or local storage, once you leave the site or refresh the page, all messages disappear with no trace of evidence left.",
+    technologies: ["React", "socket.io", "express"],
     demo: "https://chatbot.johnmwendwa.me/",
     source: "https://github.com/JohnMwendwa/chatbot",
   },
   {
     image: {
-      src: "/projects/chatbot.webp",
-      alt: "",
+      src: "/projects/current.png",
+      alt: "Image with books that am currently reading",
     },
     title: "Current Read",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit repudiandae molestiae laboriosam accusamus soluta similique, possimus eveniet amet sunt? Voluptates voluptatibus cumque ex similique nisi accusantium nulla nihil accusamus sint.",
-    technologies: ["Next.js", "Tailwind", "NodeJS", "MongoDB"],
+      "This website is for keeping track of books that I'm currently reading. I know I didn't put reading among my hobbies but neither did I put eating, because reading has become an integral part of my lifestyle. Me and books we just love each other. You can download or fork the project and keep track of your own reading list.",
+    technologies: [
+      "Next.js",
+      "Next-auth",
+      "Tailwind",
+      "NodeJS",
+      "mongoose",
+      "MongoDB",
+    ],
     demo: "https://books.johnmwendwa.me/",
     source: "https://github.com/JohnMwendwa/current-read",
   },
 ];
+
+const FramerImage = motion(Image);
 
 const Projects = () => {
   return (
@@ -99,7 +128,7 @@ const Projects = () => {
                 </span>
               ))}
             </p>
-            <div className="flex w-full justify-center items-center py-2">
+            <div className="flex w-full justify-center items-center my-3">
               <Link
                 href={ProectDetails[0].demo}
                 target="_blank"
@@ -115,7 +144,7 @@ const Projects = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 * idx }}
+            transition={{ duration: 0.5, delay: 0.4 * idx }}
             key={idx}
             className="col-span-12 md:col-span-6 xl:col-span-4 flex flex-col border border-gray-200 rounded-2xl shadow-sm shadow-gray-100"
           >
