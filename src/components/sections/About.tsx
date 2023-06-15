@@ -33,8 +33,8 @@ const About = () => {
         <h1 className="font-bold text-yellow-400 text-5xl mb-16 text-center uppercase tracking-tight">
           About Me
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-32 text-lg">
-          <div className="text-lg sm:text-xl mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-24 text-lg">
+          <div className="text-lg text-justify sm:text-xl mb-8">
             <h2 className="font-bold text-3xl mb-3">
               Hi, I&apos;m John Mwendwa
             </h2>
@@ -60,7 +60,15 @@ const About = () => {
             </p>
           </div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 0, y: -50 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              y: 0,
+              transition: { delay: 0.75, duration: 1 },
+            }}
+          >
             <h3 className="font-bold text-2xl mb-3">My Skills</h3>
             <div>
               <h3 className="text-yellow-400 font-bold">Frontend</h3>
@@ -73,7 +81,7 @@ const About = () => {
                 {Skills.fronted.map((skill) => (
                   <motion.span
                     key={skill}
-                    className="px-3 py-1 bg-gray-700 m-2 rounded-sm"
+                    className="px-3 py-1 bg-gray-700 mr-2 mt-2 rounded-sm"
                     variants={Box}
                   >
                     {skill}
@@ -92,7 +100,7 @@ const About = () => {
                 {Skills.backend.map((skill) => (
                   <motion.span
                     key={skill}
-                    className="px-3 py-1 bg-gray-700 m-2 rounded-sm"
+                    className="px-3 py-1 bg-gray-700 mr-2 mt-2 rounded-sm"
                     variants={Box}
                   >
                     {skill}
@@ -100,7 +108,7 @@ const About = () => {
                 ))}
               </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
         <Education />
         <Hobbies />
@@ -114,13 +122,14 @@ const Container: Variants = {
   animate1: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.3,
+      delayChildren: 0.1,
     },
   },
   animate2: {
     transition: {
-      staggerChildren: 0.5,
-      delayChildren: 5.5,
+      staggerChildren: 0.3,
+      delayChildren: 4.05,
     },
   },
 };
