@@ -29,13 +29,13 @@ const Skills: SkillsProps = {
 const About = () => {
   return (
     <SectionContainer>
-      <div className="h-full px-8 py-16 text-white">
-        <h1 className="font-bold text-yellow-400 text-5xl mb-16 text-center uppercase tracking-tight">
+      <div className="h-full px-8 mt-8 sm:mt-16 text-white">
+        <h1 className="font-bold text-yellow-400 text-4xl sm:text-5xl mb-6 sm:mb-16 text-center uppercase tracking-tight">
           About Me
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-24 text-lg">
-          <div className="text-lg sm:text-justify sm:text-xl mb-8">
-            <h2 className="font-bold text-3xl mb-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-24 text-base sm:text-lg">
+          <div className="text-base sm:text-justify sm:text-xl mb-8">
+            <h2 className="font-bold text-2xl sm:text-3xl mb-3">
               Hi, I&apos;m John Mwendwa
             </h2>
             <p className="mb-3">
@@ -89,7 +89,7 @@ const About = () => {
                 ))}
               </motion.div>
             </div>
-            <div>
+            <div className="mt-2">
               <h3 className="text-yellow-400 font-bold">Backend</h3>
               <motion.div
                 className="flex flex-wrap font-mono"
