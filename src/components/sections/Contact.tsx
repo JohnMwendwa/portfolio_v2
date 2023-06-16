@@ -112,29 +112,29 @@ const Contact = () => {
   return (
     <div className="relative flex flex-col items-center justify-center h-full px-8">
       <ToastContainer />
-      <h1 className="font-bold text-yellow-400 text-4xl sm:text-5xl mb-4 w-full text-center uppercase tracking-tight">
+      <h1 className="font-bold text-yellow-400 text-4xl sm:text-5xl mb-2 w-full text-center uppercase tracking-tight">
         Contact Me
       </h1>
 
-      <div className="flex justify-center space-x-4 text-white mb-6">
+      <div className="flex justify-center space-x-4 text-white text-sm mb-6">
         <Link
           href={"https://wa.me/+254716237927"}
           target="_blank"
           className="group hover:text-yellow-400 inline-flex flex-col items-center justify-center"
         >
           Whatsapp
-          <WhatsappIcon className="group-hover:fill-yellow-400" />
+          <WhatsappIcon className="group-hover:fill-yellow-400 mt-1" />
         </Link>
         <Link
           href={"mailto:hey@ohnmwendwa.me"}
           className="group hover:text-yellow-400 inline-flex flex-col items-center justify-center"
         >
           Email
-          <MailIcon className="group-hover:fill-yellow-400" />
+          <MailIcon className="group-hover:fill-yellow-400 mt-1" />
         </Link>
       </div>
 
-      <form className="w-full max-w-lg" onSubmit={handleSubmit}>
+      <form className="w-full max-w-lg appearance-none" onSubmit={handleSubmit}>
         <div className="relative w-full">
           <input
             id="name"
@@ -149,7 +149,7 @@ const Contact = () => {
             htmlFor="name"
             className="absolute transition-all left-0 -top-3.5 ml-4 px-2 bg-gray-900 peer-placeholder-shown:top-2 peer-focus:-top-3.5 text-gray-300"
           >
-            Enter your name
+            Name
           </label>
         </div>
         <div className="relative w-full mt-6">
@@ -166,7 +166,7 @@ const Contact = () => {
             htmlFor="email"
             className="absolute transition-all left-0 -top-3.5 ml-4 px-2 bg-gray-900 peer-placeholder-shown:top-2 peer-focus:-top-3.5 text-gray-300"
           >
-            Enter your email
+            Email
           </label>
         </div>
         <div className="relative w-full mt-6">
@@ -183,7 +183,7 @@ const Contact = () => {
             htmlFor="subject"
             className="absolute transition-all left-0 -top-3.5 ml-4 px-2 bg-gray-900 peer-placeholder-shown:top-2 peer-focus:-top-3.5 text-gray-300"
           >
-            Enter subject
+            Subject
           </label>
         </div>
         <div className="relative w-full mt-6">
@@ -200,7 +200,7 @@ const Contact = () => {
             htmlFor="textarea"
             className="absolute transition-all left-0 -top-3.5 ml-4 px-2 bg-gray-900 text-gray-300"
           >
-            Enter your message
+            Message
           </label>
         </div>
         <div className="flex justify-center w-full mt-2">
