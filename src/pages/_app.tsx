@@ -13,20 +13,22 @@ const inter = Inter({
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        className={`${inter.variable} font-sans bg-gray-900`}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={Container}
-        key={router.route}
-      >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </motion.div>
-    </AnimatePresence>
+    <>
+      <AnimatePresence>
+        <motion.div
+          className={`${inter.variable} font-sans bg-gray-900`}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={Container}
+          key={router.route}
+        >
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </motion.div>
+      </AnimatePresence>
+    </>
   );
 }
 
