@@ -2,14 +2,15 @@ import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
 export interface EmailProps {
+  from: string;
   to: string;
   subject: string;
   text?: string;
 }
 
-export const sendEmail = async (mailOptions: EmailProps) => {
+const sendEmail = async (mailOptions: EmailProps) => {
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: process.env.EMAIL_HOST,
     port: 465,
     secure: true,
     auth: {
@@ -30,29 +31,30 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
   }
 
-  const { name, email, subject, message } = req.body;
-
-  if (!name.trim()) {
-    return res.status(401).json({
-      error: "Please add your name",
-    });
-  } else if (!email.trim()) {
-    return res.status(401).json({
-      error: "Please add a valid email",
-    });
-  } else if (!subject.trim()) {
-    return res.status(401).json({
-      error: "Please add the subject of this email",
-    });
-  } else if (!message.trim()) {
-    return res.status(401).json({
-      error: "Please add your name",
-    });
-  }
-
   try {
+    const { name, email, subject, message } = req.body;
+
+    if (!name.trim()) {
+      return res.status(401).json({
+        error: "Please add your name",
+      });
+    } else if (!email.trim()) {
+      return res.status(401).json({
+        error: "Please add a valid email",
+      });
+    } else if (!subject.trim()) {
+      return res.status(401).json({
+        error: "Please add the subject of this email",
+      });
+    } else if (!message.trim()) {
+      return res.status(401).json({
+        error: "Please add your name",
+      });
+    }
+
     const response = await sendEmail({
-      to: process.env.EMAIL_NAME,
+      from: process.env.EMAIL_NAME,
+      to: process.env.EMAIL_TO,
       subject: subject,
       text: `${name} - ${email} \n\n${message}`,
     });
@@ -72,7 +74,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
   } catch (e) {
     res.status(500).json({
-      error: "Email not sent",
+      error: `Email not sent - ${e.message}`,
     });
   }
 };
