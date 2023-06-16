@@ -87,7 +87,7 @@ const FramerImage = motion(Image);
 const Projects = () => {
   return (
     <div className="my-8 px-6 sm:px-16 w-full">
-      <h1 className="font-bold text-yellow-400 text-4xl sm:text-6xl mb-16 w-full text-center uppercase tracking-tight">
+      <h1 className="font-bold text-yellow-400 text-4xl sm:text-5xl mb-4 sm:mb-16 w-full text-center uppercase tracking-tight">
         Projects
       </h1>
 
@@ -166,9 +166,7 @@ const Projects = () => {
               <h3 className="mb-2 text-2xl font-bold tracking-tight">
                 {project.title}
               </h3>
-              <p className="mb-3 text-lg text-gray-300">
-                {project.description}
-              </p>
+              <p className="mb-3 text-gray-300">{project.description}</p>
 
               <p className="mb-3">
                 <span className="font-bold">Technologies : </span>
@@ -186,7 +184,7 @@ const Projects = () => {
               <Link
                 href={project.demo}
                 target="_blank"
-                className="bg-yellow-700 hover:bg-yellow-600 text-white px-6 py-2 text-sm rounded-lg"
+                className="bg-yellow-700 hover:bg-yellow-600 text-white px-4 sm:px-6 py-2 text-sm rounded-lg"
               >
                 Live Demo
               </Link>
@@ -194,7 +192,7 @@ const Projects = () => {
                 <Link
                   href={project.source}
                   target="_blank"
-                  className="bg-orange-700 hover:bg-orange-600 text-white px-6 py-2 text-sm rounded-lg"
+                  className="bg-orange-700 hover:bg-orange-600 text-white p-4 sm:px-6 py-2 text-sm rounded-lg"
                 >
                   Source Code
                 </Link>
