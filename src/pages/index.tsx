@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 import SectionContainer from "components/SectionContainer";
 import GithubIcon from "assets/github";
@@ -16,10 +16,10 @@ export default function Home() {
           <h1 className="text-white text-4xl sm:text-6xl lg:text-8xl font-extrabold tracking-tight mb-3">
             Hey 👋 I&apos;m John
           </h1>
-          <h2 className="font-bold text-2xl sm:text-3xl  text-yellow-400 saturate-200 mb-4">
+          <h2 className="font-bold text-xl sm:text-3xl text-yellow-400 saturate-200 mb-4">
             Full Stack Web Developer
           </h2>
-          <p className="max-w-sm sm:max-w-xl text-base sm:text-lg md:text-xl text-gray-100 text-justify">
+          <p className="max-w-sm sm:max-w-xl text-base sm:text-lg md:text-xl text-gray-100 sm:text-justify">
             I&apos;m an advocate for building responsive, accessible and
             inclusive digital products and experiences for the web based in
             Nairobi, Kenya
@@ -66,7 +66,7 @@ export default function Home() {
   );
 }
 
-const AnimatedLink = {
+const AnimatedLink: Variants = {
   initial: {
     opacity: 0,
     y: 50,
@@ -77,7 +77,8 @@ const AnimatedLink = {
     y: 0,
     x: 0,
     transition: {
-      delay: 0.3,
+      delay: 0.5,
+      duration: 0.75,
       type: "spring",
     },
   },
@@ -86,7 +87,8 @@ const AnimatedLink = {
     y: 0,
     x: 0,
     transition: {
-      delay: 0.8,
+      delay: 1.5,
+      duration: 0.75,
       type: "spring",
     },
   },
@@ -95,7 +97,8 @@ const AnimatedLink = {
     y: 0,
     x: 0,
     transition: {
-      delay: 1.3,
+      delay: 2.25,
+      duration: 0.75,
       type: "spring",
     },
   },
