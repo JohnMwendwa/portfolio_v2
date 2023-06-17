@@ -111,7 +111,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="relative flex flex-col items-center justify-center h-full my-4 sm:my-8">
+    <div className="relative flex flex-col items-center justify-center h-full py-4 sm:py-8">
       <SectionContainer>
         <ToastContainer />
         <div className="flex flex-col items-center justify-center w-full px-4">
