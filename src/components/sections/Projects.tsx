@@ -28,6 +28,7 @@ const ProectDetails: ProectDetailsProps[] = [
     technologies: [
       "Next.js",
       "Tailwind",
+      "TypeScript",
       "Next-auth",
       "express",
       "mongoose",
@@ -72,6 +73,7 @@ const ProectDetails: ProectDetailsProps[] = [
       "This website is for keeping track of books that I'm currently reading. I know I didn't put reading among my hobbies but neither did I put eating, because reading has become an integral part of my lifestyle. Me and books we just love each other. You can download or fork the project and keep track of your own reading list.",
     technologies: [
       "Next.js",
+      "TypeScript",
       "Next-auth",
       "Tailwind",
       "NodeJS",
