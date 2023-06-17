@@ -11,12 +11,36 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const JsonLdData = () => {
+  return {
+    __html: `{
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "John Mwendwa",
+      "url" : "https://johnmwendwa.me/",
+      "description" : "John Mwendwa is a passionate full stack web developer with an extensive knowledge in HTML, CSS, Javascript, React, Next.js, Express, Node.js, MySQL and MongoDB.",
+      "keywords" : "Full Stack web developer, John Mwendwa, Mwendwa, Front-End, React, JavaScript, Node.js, Next.js, MongoDB , SEO",
+      "author" : {
+        "@type": "Person",
+        "name": "John Mwendwa",
+        "url": "https://johnmwendwa.me/",
+        "image": "",
+        "sameAs": [
+          "https://github.com/JohnMwendwa",
+          "https://johnmwendwa.me/"
+        ],
+        "jobTitle": "Full Stack Web Developer" 
+      }
+    }`,
+  };
+};
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <>
       <Head>
-        <title>John Mwendwa - Full Stack web developer</title>
+        <title>John Mwendwa | Full Stack Web Developer</title>
 
         <meta
           name="description"
@@ -32,7 +56,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="author" content="John Mwendwa" />
         <meta
           property="og:title"
-          content="John Mwendwa | Full Stack web developer"
+          content="John Mwendwa | Full Stack Web Developer"
         />
 
         <meta
@@ -68,8 +92,13 @@ function MyApp({ Component, pageProps }) {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={JsonLdData()}
+          key="personal-jsonld"
+        />
       </Head>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.div
           className={`${inter.variable} font-sans bg-gray-900`}
           initial="initial"
@@ -89,18 +118,21 @@ function MyApp({ Component, pageProps }) {
 
 const Container: Variants = {
   initial: {
-    opacity: 0,
+    opacity: 1,
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
   },
   animate: {
     opacity: 1,
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
     transition: {
-      duration: 0.75,
+      when: "beforeChildren",
     },
   },
   exit: {
     clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+    transition: {
+      duration: 0.75,
+    },
   },
 };
 
