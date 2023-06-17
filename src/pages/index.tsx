@@ -12,7 +12,12 @@ export default function Home() {
   return (
     <div className="h-full flex flex-col justify-center items-center py-8 px-4">
       <SectionContainer>
-        <div className="text-center sm:text-start">
+        <motion.div
+          className="text-center sm:text-start"
+          variants={AnimateTextVariant}
+          initial="initial"
+          animate="animate"
+        >
           <h1 className="text-white text-4xl sm:text-6xl lg:text-8xl font-extrabold tracking-tight mb-3">
             Hey 👋 I&apos;m John
           </h1>
@@ -24,12 +29,12 @@ export default function Home() {
             inclusive digital products and experiences for the web based in
             Nairobi, Kenya
           </p>
-        </div>
+        </motion.div>
         <div className="w-full  mx-auto flex flex-col justify-center items-center  sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-4 md:mt-8 px-6">
           <FramerLink
             href={"/contact"}
             className="flex items-center justify-center group w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-gray-200 backdrop-blur-sm backdrop-filter"
-            variants={AnimatedLink}
+            variants={AnimatedLinkVariant}
             initial="initial"
             animate="animate"
           >
@@ -41,7 +46,7 @@ export default function Home() {
             aria-label="Visit my developer blog"
             target="_blank"
             className="flex items-center justify-center group w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-gray-200 backdrop-blur-sm backdrop-filter"
-            variants={AnimatedLink}
+            variants={AnimatedLinkVariant}
             initial="initial"
             animate="animate2"
           >
@@ -53,7 +58,7 @@ export default function Home() {
             aria-label="Visit my github profile"
             target="_blank"
             className="flex items-center justify-center group w-full sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105   hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-gray-200 backdrop-blur-sm backdrop-filter"
-            variants={AnimatedLink}
+            variants={AnimatedLinkVariant}
             initial="initial"
             animate="animate3"
           >
@@ -66,40 +71,43 @@ export default function Home() {
   );
 }
 
-const AnimatedLink: Variants = {
+const AnimateTextVariant: Variants = {
+  initial: { opacity: 0, x: 0, y: 0 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    y: [-100, 0, -50, 0],
+    transition: { type: "spring", bounce: 0.75 },
+  },
+};
+
+const AnimatedLinkVariant: Variants = {
   initial: {
     opacity: 0,
     y: 50,
-    x: -15,
   },
   animate: {
     opacity: 1,
     y: 0,
-    x: 0,
     transition: {
       delay: 0.5,
       duration: 0.75,
-      type: "spring",
     },
   },
   animate2: {
     opacity: 1,
     y: 0,
-    x: 0,
     transition: {
       delay: 1.5,
       duration: 0.75,
-      type: "spring",
     },
   },
   animate3: {
     opacity: 1,
     y: 0,
-    x: 0,
     transition: {
       delay: 2.25,
       duration: 0.75,
-      type: "spring",
     },
   },
 };
