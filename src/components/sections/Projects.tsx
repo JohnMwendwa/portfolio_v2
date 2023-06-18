@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -88,6 +88,24 @@ const ProectDetails: ProectDetailsProps[] = [
 const FramerImage = motion(Image);
 
 const Projects = () => {
+  const [smallScreen, setSmallScreen] = useState(false);
+  useEffect(() => {
+    getWidth();
+    window.addEventListener("resize", getWidth);
+    return () => {
+      window.removeEventListener("resize", getWidth);
+    };
+  }, []);
+
+  const getWidth = () => {
+    const smallWidth = window.innerWidth;
+    if (smallWidth <= 640) {
+      setSmallScreen(true);
+    } else {
+      setSmallScreen(false);
+    }
+  };
+
   return (
     <div className="my-8">
       <SectionContainer>
@@ -146,9 +164,12 @@ const Projects = () => {
 
           {ProectDetails.slice(1, 4).map((project, idx) => (
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: smallScreen ? 0 : 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 * idx }}
+              transition={{
+                duration: 0.5,
+                delay: smallScreen ? 0 : 0.4 * idx,
+              }}
               key={idx}
               className="col-span-12 md:col-span-6 xl:col-span-4 flex flex-col border border-gray-200 rounded-2xl shadow-sm shadow-gray-100"
             >
