@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio Website
+![my portfolio landing page](https://github.com/JohnMwendwa/portfolio/assets/72663882/fdc2a9fa-38a8-4595-bcb3-8b59e08c7aee)
 
-## Getting Started
+![my porfolio gif](https://github.com/JohnMwendwa/portfolio/assets/72663882/0ad7c6f8-81c9-412e-8aea-53cef1412aaa)
 
-First, run the development server:
+## 🛠 Development
 
-```bash
+
+Clone the repository
+
+```zsh
+https://github.com/JohnMwendwa/portfolio.git
+```
+
+Install dependencies
+
+```zsh
+npm install
+
+# Or using Yarn
+
+yarn
+```
+
+Start the development server
+
+```zsh
 npm run dev
-# or
+
+# Or using Yarn
+
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build for production
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```zsh
+npm run build
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Or using Yarn
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+yarn build
+```
