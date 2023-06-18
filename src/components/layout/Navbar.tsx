@@ -13,15 +13,21 @@ export interface MenuProps {
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const position = window.scrollY;
-      if (position > 80) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
-    });
+    window.addEventListener("scroll", getHeight);
+    return () => {
+      window.removeEventListener("scroll", getHeight);
+    };
   }, []);
+
+  // Get scroll position
+  const getHeight = () => {
+    const position = window.scrollY;
+    if (position > 80) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
   return (
     <header
       className={`${
