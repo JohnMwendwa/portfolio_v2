@@ -18,7 +18,7 @@ const JsonLdData = () => {
       "@type" : "WebSite",
       "name" : "John Mwendwa",
       "url" : "https://johnmwendwa.me/",
-      "description" : "John Mwendwa is a passionate full stack web developer with an extensive knowledge in HTML, CSS, Javascript, React, Next.js, Express, Node.js, MySQL and MongoDB.",
+      "description" : "I'm an advocate for building responsive, accessible and inclusive digital products and experiences for the web based in Nairobi, Kenya.",
       "keywords" : "Full Stack web developer, John Mwendwa, Mwendwa, Front-End, React, JavaScript, Node.js, Next.js, MongoDB , SEO",
       "author" : {
         "@type": "Person",
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
 
         <meta
           name="description"
-          content="John Mwendwa is a passionate full stack web developer with an extensive knowledge in HTML, CSS, Javascript, React, Next.js, Express, Node.js, MySQL and MongoDB."
+          content="I'm an advocate for building responsive, accessible and inclusive digital products and experiences for the web based in Nairobi, Kenya."
           key="desc"
         />
 
@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }) {
 
         <meta
           property="og:description"
-          content="John Mwendwa is a passionate full stack web developer with an extensive knowledge in HTML, CSS, Javascript, React, Next.js, Express, Node.js, MySQL and MongoDB."
+          content="I'm an advocate for building responsive, accessible and inclusive digital products and experiences for the web based in Nairobi, Kenya."
         />
 
         <meta name="og:type" content="website" />
