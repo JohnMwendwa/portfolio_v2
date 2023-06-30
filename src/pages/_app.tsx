@@ -71,6 +71,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:site_name" content="John Mwendwa" />
 
         <meta property="og:locale" content="en_KE" />
+        <meta name="theme-color" content="rgb(17, 24, 39)" />
 
         <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
 

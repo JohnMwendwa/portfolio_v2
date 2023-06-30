@@ -1,7 +1,7 @@
 {
-  "start_url": "https://johnmwendwa.me",
+  "start_url": "/",
   "name": "John Mwendwa",
-  "short_name": "John Mwendwa",
+  "short_name": "Mwendwa",
   "description": "John Mwendwa is a passionate full stack web developer with an extensive knowledge in HTML, CSS, Javascript, React, Next.js, Express, Node.js, MySQL and MongoDB.",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#14142b",
-  "background_color": "#ffffff",
+  "theme_color": "rgb(17, 24, 39)",
+  "background_color": "rgb(17, 24, 39)",
   "display": "standalone"
 }
