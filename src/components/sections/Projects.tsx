@@ -121,13 +121,12 @@ const Projects = () => {
             className="col-span-12 w-full flex flex-col md:flex-row
          items-center justify-between rounded-3xl border border-black shadow-2xl p-4 sm:p-12 bg-white"
           >
-            <div className="flex flex-col w-full md:w-1/2 max-h-[300px] overflow-hidden rounded-lg border-2">
+            <div className="relative w-full h-[300px] md:h-full md:w-1/2  overflow-hidden rounded-lg bg-gray-400">
               <Image
                 src={ProectDetails[0].image.src}
                 alt=""
-                width={300}
-                height={200}
-                className="w-full h-auto object-cover"
+                fill={true}
+                className="w-full object-cover"
                 priority
               />
             </div>
@@ -174,16 +173,15 @@ const Projects = () => {
               className="col-span-12 md:col-span-6 xl:col-span-4 flex flex-col border border-gray-200 rounded-2xl shadow-sm shadow-gray-100"
             >
               <motion.div
-                className="w-full max-h-[300px] md:h-auto overflow-hidden rounded-t-2xl "
+                className="relative w-full h-[300px] overflow-hidden rounded-t-2xl bg-gray-400"
                 whileHover={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
                 <FramerImage
                   src={project.image.src}
                   alt={project.image.alt}
-                  className="min-w-full h-auto rounded-t-lg object-cover"
-                  width={300}
-                  height={300}
+                  className="w-full h-auto rounded-t-lg object-cover"
+                  fill
                 />
               </motion.div>
 
