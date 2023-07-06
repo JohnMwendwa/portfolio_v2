@@ -46,6 +46,7 @@ export default function Home() {
               href="https://blog.johnmwendwa.me"
               aria-label="Visit my developer blog"
               target="_blank"
+              rel="noopener"
               className="flex items-center justify-center group w-full max-w-xs sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105 hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-gray-200 backdrop-blur-sm backdrop-filter"
               variants={AnimatedLinkVariant}
               initial="initial"
@@ -58,6 +59,7 @@ export default function Home() {
               href="https://github.com/JohnMwendwa"
               aria-label="Visit my github profile"
               target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center group w-full max-w-xs sm:w-auto px-8 py-2 rounded-md ring-2 ring-yellow-400 hover:scale-105 hover:bg-gray-800 hover:ring focus:ring-4 outline-none transition-all duration-300 text-gray-200 backdrop-blur-sm backdrop-filter"
               variants={AnimatedLinkVariant}
               initial="initial"

@@ -61,6 +61,7 @@ const Navbar = () => {
             <motion.a
               href="https://github.com/JohnMwendwa"
               target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ y: -2 }}
               className="relative"
               aria-label="Visit my github profile"

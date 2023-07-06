@@ -53,6 +53,7 @@ const MobileNav = ({ MenuItems }: MobileNavProps) => {
               <Link
                 href="https://github.com/JohnMwendwa"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit my github profile"
                 className={`flex items-center px-4 py-2 border-t border-orange-400 rounded-b-md ${
                   active && "text-orange-600 bg-orange-100"
