@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     >
       <Navbar />
       <main>{children}</main>
-      <footer className="bg-gray-800 py-4 text-white text-center">
+      <footer className="py-4 text-sm text-white text-center">
         <SectionContainer>
           &copy; John Mwendwa <span>{new Date().getFullYear()}</span>
         </SectionContainer>
