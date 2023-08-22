@@ -12,18 +12,22 @@ const EducationDetails: EducationDetailsProps[] = [
     institution: "School of Life",
     period: "2023 - present",
     certification: [
-      "Uppercuts and knockouts",
-      "Discipline",
-      "Perserverence 💪",
+      "Experience what you have learned",
+      "Turn the other cheek as you prepare to knock that m** out 😎",
+      "You only lose when you stop trying",
+      "Smile.You don't own all the problems in the world 😊",
+      "Live and let live",
     ],
   },
   {
     institution: "Udemy",
-    period: "2021 - 2022",
+    period: "2021 - present",
     certification: [
+      "Javascript Algorithms and Data Structures Masterclass",
       "The Complete Node.js Developer Course",
       "Modern Javascript for ReactJs -ES6",
       "Cyber Security for Beginners",
+      "How the Internet Works & the Web Development Process",
     ],
   },
   {
