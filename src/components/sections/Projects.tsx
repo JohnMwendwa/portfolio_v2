@@ -127,6 +127,7 @@ const Projects = () => {
                 alt=""
                 fill={true}
                 className="w-full object-cover"
+                sizes="(min-width: 1340px) 527px, (min-width: 780px) calc(50.74vw - 143px), (min-width: 640px) calc(100vw - 274px), calc(100vw - 98px)"
                 priority
               />
             </div>
@@ -181,6 +182,7 @@ const Projects = () => {
                   src={project.image.src}
                   alt={project.image.alt}
                   className="w-full h-auto rounded-t-lg object-cover"
+                  sizes="(min-width: 1280px) 350px, (min-width: 780px) calc(50vw - 114px), (min-width: 640px) calc(100vw - 178px), calc(100vw - 66px)"
                   fill
                 />
               </motion.div>
