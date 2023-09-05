@@ -3,8 +3,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import SectionContainer from "components/SectionContainer";
+import blogImage from "../../../public/projects/blog.png";
 
-interface ProectDetailsProps {
+interface ProjectDetailsProps {
   image: {
     src: string;
     alt: string;
@@ -16,7 +17,7 @@ interface ProectDetailsProps {
   source?: string;
 }
 
-const ProectDetails: ProectDetailsProps[] = [
+const ProjectDetails: ProjectDetailsProps[] = [
   {
     image: {
       src: "/projects/blog.png",
@@ -123,9 +124,10 @@ const Projects = () => {
           >
             <div className="relative w-full h-[300px] md:h-full md:w-1/2  overflow-hidden rounded-lg bg-gray-400">
               <Image
-                src={ProectDetails[0].image.src}
-                alt=""
+                src={blogImage}
+                alt={ProjectDetails[0].image.alt}
                 fill={true}
+                placeholder="blur"
                 className="w-full object-cover"
                 sizes="(min-width: 1340px) 527px, (min-width: 780px) calc(50.74vw - 143px), (min-width: 640px) calc(100vw - 274px), calc(100vw - 98px)"
                 priority
@@ -136,12 +138,12 @@ const Projects = () => {
                 Featured
               </span>
               <h2 className="py-2 font-bold text-4xl">
-                {ProectDetails[0].title}
+                {ProjectDetails[0].title}
               </h2>
-              <p>{ProectDetails[0].description}</p>
+              <p>{ProjectDetails[0].description}</p>
               <p className="mt-2">
                 <span className="font-bold">Technologies : </span>
-                {ProectDetails[0].technologies.map((tech, idx) => (
+                {ProjectDetails[0].technologies.map((tech, idx) => (
                   <span
                     key={idx}
                     className="inline-flex flex-wrap px-3 py-1 mt-1 mr-2 rounded-lg bg-yellow-400/20 text-sm"
@@ -152,7 +154,7 @@ const Projects = () => {
               </p>
               <div className="flex w-full justify-center items-center my-3">
                 <Link
-                  href={ProectDetails[0].demo}
+                  href={ProjectDetails[0].demo}
                   target="_blank"
                   className="bg-orange-700 hover:bg-orange-600 text-white px-6 py-2 text-sm rounded-lg"
                 >
@@ -162,7 +164,7 @@ const Projects = () => {
             </div>
           </motion.div>
 
-          {ProectDetails.slice(1, 4).map((project, idx) => (
+          {ProjectDetails.slice(1, 4).map((project, idx) => (
             <motion.div
               initial={{ opacity: 0, y: smallScreen ? 0 : 50 }}
               whileInView={{ opacity: 1, y: 0 }}
