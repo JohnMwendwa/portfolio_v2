@@ -38,7 +38,7 @@ const ProjectDetails: ProjectDetailsProps[] = [
       "MongoDB",
       "react-markdown",
     ],
-    demo: "https://blog.johnmwendwa.me/",
+    demo: "https://developers-home.vercel.app/",
   },
   {
     image: {
@@ -49,7 +49,7 @@ const ProjectDetails: ProjectDetailsProps[] = [
     description:
       "If you've read my about page you definitely know that I'm a big fan of movies. I just had to create a site where I can download movies for free and without sooo many ads getting in my way. I hope this site benefits you as it does for me.",
     technologies: ["React", "Tailwind", "Typescript", "Rest Api", "debounce"],
-    demo: "https://movies.johnmwendwa.me/",
+    demo: "https://react-movies-lac.vercel.app/",
     source: "https://github.com/JohnMwendwa/react-movies-app",
   },
   {
@@ -61,7 +61,7 @@ const ProjectDetails: ProjectDetailsProps[] = [
     description:
       "If you don't like leaving evidence behind, this site has got you in mind. Go chat with your other person there. No personal details are required. You just choose any anonymous name you can think of and you can share the name with those you want to chat with, and ask them to join the chat room using that name. Your messages are not saved in any database or local storage, once you leave the site or refresh the page, all messages disappear with no trace of evidence left.",
     technologies: ["React", "socket.io", "express"],
-    demo: "https://chatbot.johnmwendwa.me/",
+    demo: "https://chatbot-ivory-eight.vercel.app/",
     source: "https://github.com/JohnMwendwa/chatbot",
   },
   {
@@ -81,7 +81,7 @@ const ProjectDetails: ProjectDetailsProps[] = [
       "mongoose",
       "MongoDB",
     ],
-    demo: "https://books.johnmwendwa.me/",
+    demo: "https://current-book.vercel.app/",
     source: "https://github.com/JohnMwendwa/current-read",
   },
 ];

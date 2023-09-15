@@ -43,7 +43,7 @@ export default function Home() {
               Get in Touch
             </FramerLink>
             <FramerLink
-              href="https://blog.johnmwendwa.me"
+              href="https://developers-home.vercel.app/"
               aria-label="Visit my developer blog"
               target="_blank"
               rel="noopener"
