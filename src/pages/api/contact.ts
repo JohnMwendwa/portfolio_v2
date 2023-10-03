@@ -12,7 +12,7 @@ const sendEmail = async (mailOptions: EmailProps) => {
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: parseInt(process.env.EMAIL_PORT),
-    secure: Boolean(process.env.EMAIL_SECURE),
+    secure: true,
     auth: {
       user: process.env.EMAIL_NAME,
       pass: process.env.EMAIL_PASSWORD,
