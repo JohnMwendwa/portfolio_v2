@@ -54,19 +54,26 @@ const ProjectDetails: ProjectDetailsProps[] = [
   },
   {
     image: {
-      src: "/projects/chatbot.webp",
-      alt: "Image of the chatbot website",
+      src: "/projects/vet2.png",
+      alt: "Image of the vet website",
     },
-    title: "Chatbot",
+    title: "Vet Admin Dashboard",
     description:
-      "If you don't like leaving evidence behind, this site has got you in mind. Go chat with your other person there. No personal details are required. You just choose any anonymous name you can think of and you can share the name with those you want to chat with, and ask them to join the chat room using that name. Your messages are not saved in any database or local storage, once you leave the site or refresh the page, all messages disappear with no trace of evidence left.",
-    technologies: ["React", "socket.io", "express"],
-    demo: "https://chatbot-ivory-eight.vercel.app/",
-    source: "https://github.com/JohnMwendwa/chatbot",
+      "This is an admin dashboard of a vet management system. It incorporates many features such as tracking daily new clients, total revenue generated, number of clients and employees, scheduled appointments, notifications from clients and employees, ability to add new clients and employees, searching and filtering and military grade authentication system just to mention but a few  ",
+    technologies: [
+      "Next.js",
+      "Tailwind",
+      "Mongoose",
+      "MongoDB",
+      "Next-auth",
+      "TypeScript",
+    ],
+    demo: "https://vet-management-system.vercel.app/",
+    source: "https://github.com/JohnMwendwa/vet-management-system",
   },
   {
     image: {
-      src: "/projects/current.png",
+      src: "/projects/book.png",
       alt: "Image with books that am currently reading",
     },
     title: "Current Read",
