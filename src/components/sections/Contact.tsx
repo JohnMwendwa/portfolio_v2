@@ -161,7 +161,7 @@ const Contact = () => {
             <div className="relative w-full mt-6">
               <input
                 id="email"
-                type="emal"
+                type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
