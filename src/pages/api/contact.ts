@@ -11,7 +11,7 @@ export interface EmailProps {
 const sendEmail = async (mailOptions: EmailProps) => {
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: parseInt(process.env.EMAIL_PORT),
+    port: parseInt(process.env.EMAIL_PORT || "465"),
     secure: true,
     auth: {
       user: process.env.EMAIL_NAME,
@@ -38,7 +38,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return res.status(401).json({
         error: "Please add your name",
       });
-    } else if (!email.trim()) {
+    } else if (!email.trim() || !email.includes("@")) {
       return res.status(401).json({
         error: "Please add a valid email",
       });
@@ -53,7 +53,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const response = await sendEmail({
-      from: process.env.EMAIL_NAME,
+      from: `Portfolio <${process.env.EMAIL_NAME}>`,
       to: process.env.EMAIL_TO,
       subject: subject,
       text: `${name} - ${email} \n\n${message}`,
